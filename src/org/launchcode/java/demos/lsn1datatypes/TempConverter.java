@@ -2,18 +2,28 @@ package org.launchcode.java.demos.lsn1datatypes;
 
 import java.util.Scanner;
 
+// Here is an example of a comment
+
+/* Here is how
+to have
+multi-line
+comments.
+ */
+
 public class TempConverter {
     public static void main(String[] args) {
         double fahrenheit;
         double celsius;
-        Scanner input;
+        java.util.Scanner input;
 
-        input = new Scanner(System.in);
+        input = new java.util.Scanner(System.in);
         System.out.println("Enter the temperature in Fahrenheit: ");
         fahrenheit = input.nextDouble();
         input.close();
 
         celsius = (fahrenheit - 32) * 5/9;
         System.out.println("The temperature in Celsius is: " + celsius + "°C");
+
+        // System.out.println("This line will NOT print!");
     }
 }
