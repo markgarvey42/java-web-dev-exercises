@@ -1,22 +1,24 @@
 package org.launchcode.java.studios.restaurantmenu;
 
+import java.util.Objects;
+
 public class MenuItem {
-    private float price;
+    private double price;
     private String description;
     private String category;
     private Boolean isNew;
 
-    public MenuItem(float price, String description, String category, Boolean isNew) {
+    public MenuItem(Double price, String description, String category, Boolean isNew) {
         this.price = price;
         this.description = description;
         this.category = category;
         this.isNew = isNew;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
-    public void setPrice(float aPrice) {
+    public void setPrice(Double aPrice) {
         price = aPrice;
     }
 
@@ -39,6 +41,30 @@ public class MenuItem {
     }
     public void setIsNew(Boolean aIsNew) {
         isNew = aIsNew;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew +
+                '}';
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Objects.equals(description, menuItem.description) && Objects.equals(category, menuItem.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, category);
     }
 
 }
